@@ -3,15 +3,14 @@
 Course 1 - Learn Git in Depth
 
 <h2>What's git?</h2>
-```
-Distributed version control system
-```
-<br/>
+
+`Distributed version control system`
+
 Git is the most commonly used version control system. Git tracks the changes you make to files, so you have a record of what has been done, and you can revert to specific versions should you ever need to. Git also makes collaboration easier, allowing changes by multiple people to all be merged into one source. 
 
 <br/>
 <img src="./images/git-branches-merge.png">
-<br/><br/>
+<br/>
 
 Git is software that runs locally. Your files and their history are stored on your computer. You can also use online hosts (such as GitHub or Bitbucket) to store a copy of the files and their revision history. Having a centrally located place where you can upload your changes and download changes from others, enable you to collaborate more easily with other developers. Git can automatically merge the changes, so two people can even work on different parts of the same file and later merge those changes without losing each other’s work!
 <br/><br/>
