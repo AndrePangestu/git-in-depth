@@ -40,7 +40,7 @@ To help further understand what a Git commit is, we need to review your `Working
 
 Think of your working directory as your “in progress” working area; here, created or modified files are not yet reflected in your Git repo. Changes made to files in your working directly only exist locally on your machine.
 
-<b>EXAMPLE EXERCISE</b>
+<b>! EXAMPLE EXERCISE !</b>
 ```
 $ git commit -m "Initial Commit"
 [main 88f0de9] Initial Commit
@@ -107,3 +107,45 @@ commit
 ```
 
 <h2>Git Areas and Stashing</h2>
+<h3>> The Working Area</h3>
+<ul>
+  <li>The files in your working area that are also in the staging are not handle by git.</li>
+  <li>Also Called `untracked files`</li>
+</ul>
+
+<h3>> The Staging Area</h3>
+<ul>
+  <li>What files are going to be the next commit</li>
+  <li>The staging area is how git knows what will change between the current commit and the next commit</li>
+</ul>
+
+<h3>> The Repository</h3>
+<ul>
+  <li>The files git knows about</li>
+  <li>Contains all of your commit</li>
+</ul>
+
+
+<h3>> Git Stashing</h3>
+<ul>
+  <li>Save un-committed work</li>
+  <li>The stash is safe from destructive operation</li>
+</ul>
+
+<b>Git Stash - Basic Use</b>
+```
+> Stash Changes
+  $ git stash
+
+> List changes
+  $ git stash list
+
+> Show the content
+  $ git stash show stash@{0}
+
+> Apply the last stash
+  $ git stash apply
+
+> Apply a specific stash
+  $ git stash apply stash@{0}
+```
