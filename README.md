@@ -30,8 +30,34 @@ Git is kind of like a key value store, The value is the data, and the key is has
 
 <h3>> Git Blobs & Trees</h3>
 blob — A blob object is used for storing the contents of a single file.<br/>
-tree — A tree object contains references to other blobs or subtrees.
+tree — A tree object contains references to other blobs or subtrees. <br/>
 
+<b>example git Blob</b>
+```% git cat-file -t 581ca         
+tree
+% git cat-file -p 581ca
+100644 blob 980a0d5f19a64b4b30a87d4206aade58726b60e3 hello.txt
+```
+
+<b>example git tree</b>
+```
+% tree .git/objects
+.git/objects
+├── 58
+│   └── 1caa0fe56cf01dc028cc0b089d364993e046b6
+├── 98
+│   └── 0a0d5f19a64b4b30a87d4206aade58726b60e3
+├── 99
+│   └── b2172e47a9367ff4cb3fc9c093090087688807
+├── info
+└── pack
+```
 
 <h3>> Git Commit</h3>
+In Git, a commit is a snapshot of your repo at a specific point in time.
+
+To help further understand what a Git commit is, we need to review your `Working Directory` vs your `Staging Directory` and how files changes are reflected in your Git repository.
+
+Think of your working directory as your “in progress” working area; here, created or modified files are not yet reflected in your Git repo. Changes made to files in your working directly only exist locally on your machine.
+
 
