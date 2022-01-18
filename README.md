@@ -30,28 +30,8 @@ Git is kind of like a key value store, The value is the data, and the key is has
 
 <h3>> Git Blobs & Trees</h3>
 blob — A blob object is used for storing the contents of a single file.<br/>
-tree — A tree object contains references to other blobs or subtrees. <br/>
+tree — A tree object contains references to other blobs or subtrees.
 
-<b>example git Blob</b>
-```% git cat-file -t 581ca         
-tree
-% git cat-file -p 581ca
-100644 blob 980a0d5f19a64b4b30a87d4206aade58726b60e3 hello.txt
-```
-
-<b>example git tree</b>
-```
-% tree .git/objects
-.git/objects
-├── 58
-│   └── 1caa0fe56cf01dc028cc0b089d364993e046b6
-├── 98
-│   └── 0a0d5f19a64b4b30a87d4206aade58726b60e3
-├── 99
-│   └── b2172e47a9367ff4cb3fc9c093090087688807
-├── info
-└── pack
-```
 
 <h3>> Git Commit</h3>
 In Git, a commit is a snapshot of your repo at a specific point in time.
@@ -60,4 +40,70 @@ To help further understand what a Git commit is, we need to review your `Working
 
 Think of your working directory as your “in progress” working area; here, created or modified files are not yet reflected in your Git repo. Changes made to files in your working directly only exist locally on your machine.
 
+<b>EXAMPLE EXERCISE</b>
+```
+$ git commit -m "Initial Commit"
+[main 88f0de9] Initial Commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 exercise-sample/hello.txt
+ ```
 
+```
+$ tree .git/objects
+.git/objects
+├── 01
+│   └── e455918b8e70fb7a524b073f568c08d1ec98a2
+├── 07
+│   └── 3daee87afe04aefeb85e31ae2eef248fb5ef7d
+├── 2e
+│   └── 65b71e0be4702f11808abe37bfcd6cd37ea754
+├── 3e
+│   └── 4c27b5540dba6d1c3b10476b2e860c02a3b9f3
+├── 45
+│   └── cbcf6173870795dcd54dc619a9cc834a4165da
+├── 4c
+│   └── 8d4f1928c72cc75e2e2a124426b90662250edb
+├── 6d
+│   └── 1f2b675ff47f2bd1dee2614850c7b305dfa59e
+├── 85
+│   └── 476333e5428cc59f63425bf4eb7ac52fe1129d
+├── 88
+│   └── f0de9378d7aed2ccf775d6fdffcd23b6425a2b
+├── 98
+│   └── ca26292c8c5aa67a1bb7d9d94c4149d3f9f404
+├── a7
+│   └── 699ac9279005679e90a1d4f514239ea7554fac
+├── bd
+│   └── 2f174b867d2d31d666e0be42bd01b56cf8d041
+├── d9
+│   └── 733d44d14f824beb4e71a4e96a79bae7111f57
+├── eb
+│   └── d0fe5025450d0b72f5d69bfcade8f89a6edf58
+├── ff
+│   └── d30ed70a055b5f08dad008bd142cf488f6e520
+├── info
+└── pack
+    ├── pack-56ee8b27414b92f0cf64a5f219850eeffa44c078.idx
+    └── pack-56ee8b27414b92f0cf64a5f219850eeffa44c078.pack
+
+17 directories, 17 files
+```
+
+```
+$ ls .git/objects
+01   2e   45   6d   88   a7   d9   ff   pack
+07   3e   4c   85   98   bd   eb   info
+```
+
+```
+$ git cat-file -t 01e455
+blob
+
+$ git cat-file -p 01e455
+Hello, Wordl
+
+$ git cat-file -t 2e65b7
+commit
+```
+
+<h2>Git Areas and Stashing</h2>
